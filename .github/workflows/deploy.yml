@@ -15,8 +15,15 @@ jobs:
       - name: Deploy via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: 152.42.202.85
+          username: root
+          key: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+            QyNTUxOQAAACCGRk6qgl9Mc9G9gGRzwfDjRxtdh71DiiNKdwWewcCePgAAAJDjZUXV42VF
+            1QAAAAtzc2gtZWQyNTUxOQAAACCGRk6qgl9Mc9G9gGRzwfDjRxtdh71DiiNKdwWewcCePg
+            AAAEB7nebiW6t/m86lcjaWjagDA2M5v7wX25mYu0lT8T1iKoZGTqqCX0xz0b2AZHPB8ONH
+            G12HvUOKI0p3BZ7BwJ4+AAAACmRlcGxveS1rZXkBAgM=
+            -----END OPENSSH PRIVATE KEY-----
           source: "index.html"
           target: "/var/www/html/"
